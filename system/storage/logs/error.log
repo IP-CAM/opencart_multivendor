@@ -1,0 +1,6 @@
+2019-10-18 10:22:39 - PHP Warning:  unlink(/var/www/html/opencartdev/system/storage/cache/cache.catalog.language.1571388731): No such file or directory in /var/www/html/opencartdev/system/library/cache/file.php on line 17
+2019-10-18 10:52:29 - PHP Notice:  Undefined variable: url in /var/www/html/opencartdev/seller/controller/common/login.php on line 82
+2019-10-18 10:53:07 - PHP Notice:  Undefined variable: url in /var/www/html/opencartdev/seller/controller/common/login.php on line 71
+2019-10-18 11:10:13 - PHP Warning:  Use of undefined constant data - assumed 'data' (this will throw an Error in a future version of PHP) in /var/www/html/opencartdev/seller/controller/common/login.php on line 45
+2019-10-18 11:10:13 - PHP Warning:  Illegal string offset 'action' in /var/www/html/opencartdev/seller/controller/common/login.php on line 45
+2019-10-18 11:16:48 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/opencartdev/seller/controller/common/login.php:16) in /var/www/html/opencartdev/system/library/response.php on line 12
