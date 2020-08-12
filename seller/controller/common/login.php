@@ -13,12 +13,11 @@ class ControllerCommonLogin extends Controller {
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			$this->session->data['user_token'] = token(32);
-			//var_dump($this->request->post);
-			//exit("Posted");
+			
 			if (isset($this->request->post['redirect']) && (strpos($this->request->post['redirect'], HTTP_SERVER) === 0 || strpos($this->request->post['redirect'], HTTPS_SERVER) === 0)) {
 				$this->response->redirect($this->request->post['redirect'] . '&user_token=' . $this->session->data['user_token']);
 			} else {
-				$this->response->redirect($this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'], true, true)); //the last true passed is a hack and it adds sellers to url
+				$this->response->redirect($this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'], true));
 			}
 		}
 
@@ -40,7 +39,7 @@ class ControllerCommonLogin extends Controller {
 			$data['success'] = '';
 		}
 
-		$data['action'] = $this->url->link('common/login', '', true, true);
+		$data['action'] = $this->url->link('common/login', '', true);
 
 		if (isset($this->request->post['username'])) {
 			$data['username'] = $this->request->post['username'];
@@ -65,6 +64,7 @@ class ControllerCommonLogin extends Controller {
 			if ($this->request->get) {
 				$url .= http_build_query($this->request->get);
 			}
+
 			$data['redirect'] = $this->url->link($route, $url, true);
 		} else {
 			$data['redirect'] = '';
@@ -79,9 +79,6 @@ class ControllerCommonLogin extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 		$data['footer'] = $this->load->controller('common/footer');
 
-
-		//var_dump($data);
-		//exit;
 		$this->response->setOutput($this->load->view('common/login', $data));
 	}
 

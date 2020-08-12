@@ -1,0 +1,11 @@
+Clean everything concerning admin  example
+// HTTP
+define('HTTP_SERVER', 'http://localhost/multivendor/seller/');
+define('HTTP_SELLER', 'http://localhost/multivendor/seller/');
+
+define('HTTP_CATALOG', 'http://localhost/multivendor/');
+
+// HTTPS
+define('HTTPS_SERVER', 'http://localhost/multivendor/seller/');
+define('HTTPS_SERVER', 'http://localhost/multivendor/seller/');
+define('HTTPS_CATALOG', 'http://localhost/multivendor/');
